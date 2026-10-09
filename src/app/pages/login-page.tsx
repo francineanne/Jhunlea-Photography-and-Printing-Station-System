@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Printer, Mail, Lock, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import logo from "figma:asset/992e51a9268ff5106d57083d372c6962b2244f1b.png";
+import logo from "../../assets/jhunlea-printing-services-badge.png";
 import { useAuth } from "../contexts/auth-context";
 
 export function LoginPage() {
@@ -32,7 +32,7 @@ export function LoginPage() {
         </div>
 
         <div className="relative z-10 text-center text-white">
-          <img src={logo} alt="E-Printing System" className="w-80 h-auto mx-auto mb-8" />
+          <img src={logo} alt="Jhunlea Photography and Printing" className="w-80 h-auto mx-auto mb-8" />
           <h1 className="text-5xl mb-6">Welcome Back!</h1>
           <p className="text-xl text-white/90 max-w-md mx-auto">
             Access your dashboard to manage orders, track performance, and grow your printing
@@ -54,7 +54,7 @@ export function LoginPage() {
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden mb-8 text-center">
-            <img src={logo} alt="E-Printing System" className="w-32 h-auto mx-auto" />
+            <img src={logo} alt="Jhunlea Photography and Printing" className="w-48 h-auto mx-auto" />
           </div>
 
           <div className="mb-8">
@@ -177,14 +177,14 @@ export function LoginPage() {
                 <div className="mt-3 bg-secondary/10 border border-secondary/30 rounded-lg p-4">
                   <div className="space-y-2 text-xs">
                     <div className="bg-white/50 rounded p-2">
-                      <p className="text-foreground"><strong>Super Admin:</strong></p>
-                      <p className="text-muted-foreground">Email: admin@eprinting.com</p>
-                      <p className="text-muted-foreground">Password: admin123</p>
-                    </div>
-                    <div className="bg-white/50 rounded p-2">
                       <p className="text-foreground"><strong>Print Shop Owner:</strong></p>
                       <p className="text-muted-foreground">Email: shop@eprinting.com</p>
                       <p className="text-muted-foreground">Password: shop123</p>
+                    </div>
+                    <div className="bg-white/50 rounded p-2">
+                      <p className="text-foreground"><strong>Customer:</strong></p>
+                      <p className="text-muted-foreground">Email: customer@eprinting.com</p>
+                      <p className="text-muted-foreground">Password: customer123</p>
                     </div>
                   </div>
                 </div>

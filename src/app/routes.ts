@@ -1,10 +1,23 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate, Outlet } from "react-router";
+import { createElement } from "react";
 import { LandingPage } from "./pages/landing-page";
 import { LoginPage } from "./pages/login-page";
 import { RegisterPage } from "./pages/register-page";
-import { SuperAdminDashboard } from "./pages/super-admin-dashboard";
 import { AdminDashboard } from "./pages/admin-dashboard";
+import { CustomerDashboard } from "./pages/customer-dashboard";
+import { useAuth } from "./contexts/auth-context";
 import { RootLayout } from "./components/root-layout";
+
+function RequireRole({ role }: { role: "owner" | "customer" }) {
+  const { user, initialized } = useAuth();
+  if (!initialized) return createElement("div", { className: "min-h-screen bg-white" });
+  if (!user) return createElement(Navigate, { to: "/login", replace: true });
+  if (user.role !== role) return createElement(Navigate, { to: user.role === "owner" ? "/admin" : "/customer", replace: true });
+  return createElement(Outlet);
+}
+
+function OwnerGate() { return createElement(RequireRole, { role: "owner" }); }
+function CustomerGate() { return createElement(RequireRole, { role: "customer" }); }
 
 export const router = createBrowserRouter([
   {
@@ -24,12 +37,12 @@ export const router = createBrowserRouter([
         Component: RegisterPage,
       },
       {
-        path: "super-admin",
-        Component: SuperAdminDashboard,
+        Component: OwnerGate,
+        children: [{ path: "admin", Component: AdminDashboard }],
       },
       {
-        path: "admin",
-        Component: AdminDashboard,
+        Component: CustomerGate,
+        children: [{ path: "customer", Component: CustomerDashboard }],
       },
     ],
   },

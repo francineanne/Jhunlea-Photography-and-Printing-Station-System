@@ -1,15 +1,15 @@
 import { Link } from "react-router";
 import { Printer, ShieldCheck, FileText, CheckCircle } from "lucide-react";
-import logo from "figma:asset/992e51a9268ff5106d57083d372c6962b2244f1b.png";
+import logo from "../../assets/jhunlea-printing-services-badge.png";
 
 export function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-50">
       {/* Header/Navbar */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="E-Printing System" className="h-12 w-auto" />
+            <img src={logo} alt="Jhunlea Photography and Printing" className="h-12 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors">
@@ -40,8 +40,8 @@ export function LandingPage() {
             Modern Printing Made Easy
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Connect customers with verified print shops in Calbayog City. Streamline your printing
-            business with our comprehensive e-printing management system.
+            Book a photoshoot or send your print request to Jhunlea Photography & Printing in
+            Calbayog City. Track updates while our team reviews your request.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -61,7 +61,7 @@ export function LandingPage() {
 
         {/* Logo Image */}
         <div className="mt-16 flex justify-center">
-          <img src={logo} alt="E-Printing System" className="w-64 h-auto" />
+          <img src={logo} alt="Jhunlea Photography and Printing" className="w-72 h-auto" />
         </div>
       </section>
 
@@ -77,7 +77,7 @@ export function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
               <div className="bg-primary text-primary-foreground w-16 h-16 rounded-lg flex items-center justify-center mb-6">
                 <FileText className="w-8 h-8" />
               </div>
@@ -89,7 +89,7 @@ export function LandingPage() {
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-gradient-to-br from-cyan-50 to-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
               <div className="bg-secondary text-secondary-foreground w-16 h-16 rounded-lg flex items-center justify-center mb-6">
                 <ShieldCheck className="w-8 h-8" />
               </div>
@@ -120,7 +120,7 @@ export function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h4 className="mb-4">E-Printing System</h4>
+              <h4 className="mb-4">JHUNLEA Photography & Printing</h4>
               <p className="text-primary-foreground/80">
                 Modernizing print shops in Calbayog City
               </p>
@@ -137,7 +137,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/80">
-            <p>&copy; 2026 E-Printing System. All rights reserved.</p>
+            <p>&copy; 2026 JHUNLEA Photography & Printing. All rights reserved.</p>
           </div>
         </div>
       </footer>
